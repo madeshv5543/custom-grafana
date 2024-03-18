@@ -10,7 +10,7 @@ export const cardStyle = (theme: GrafanaTheme2, complete: boolean) => {
   const borderGradient = theme.isDark ? darkThemeGradients : lightThemeGradients;
 
   return `
-      background-color: ${theme.colors.background.secondary};
+      background-color: ${theme.colors.jdsColors.cardBackGroundColor};
       margin-right: ${theme.spacing(4)};
       border: 1px solid ${theme.colors.border.weak};
       border-bottom-left-radius: ${theme.shape.borderRadius(2)};

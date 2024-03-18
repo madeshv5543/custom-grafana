@@ -14,7 +14,7 @@ export interface ThemeTypography extends ThemeTypographyVariantTypes {
   fontWeightMedium: number;
   fontWeightBold: number;
   fontWeightBlack: number;
-
+  b1: ThemeTypographyVariant;
   // The font-size on the html element.
   htmlFontSize?: number;
 
@@ -64,7 +64,7 @@ export function createTypography(colors: ThemeColors, typographyInput: ThemeTypo
     fontFamilyMonospace = defaultFontFamilyMonospace,
     // The default font size of the Material Specification.
     fontSize = 14, // px
-    fontWeightLight = 300,
+    fontWeightLight = 200,
     fontWeightRegular = 400,
     fontWeightMedium = 500,
     fontWeightBold = 700,
@@ -109,15 +109,32 @@ export function createTypography(colors: ThemeColors, typographyInput: ThemeTypo
 
   // All our fonts/line heights should be integer multiples of 2 to prevent issues with alignment
   const variants = {
-    h1: buildVariant(fontWeightBlack, 32, 32, -0.3),
-    h2: buildVariant(fontWeightBlack, 24, 28, -0.3),
-    h3: buildVariant(fontWeightBold, 22, 24, 0),
-    h4: buildVariant(fontWeightBold, 18, 22, 0.25),
-    h5: buildVariant(fontWeightBold, 16, 22, 0),
-    h6: buildVariant(fontWeightBold, 14, 22, 0.15),
-    body: buildVariant(fontWeightMedium, fontSize, 22, 0.15),
-    bodySmall: buildVariant( fontWeightMedium, 12, 18, 0.15),
-    code: { ...buildVariant(fontWeightRegular, 14, 16, 0.15), fontFamily: fontFamilyMonospace },
+    h1: buildVariant(fontWeightBlack, 88, 88, -0.03),
+    h2: buildVariant(fontWeightBlack, 64, 64, -0.03),
+    h3: buildVariant(fontWeightBlack, 40, 40, -0.03),
+    h4: buildVariant(fontWeightBlack, 32, 32, -0.03),
+    h5: buildVariant(fontWeightBlack, 24, 28, -0.03),
+    h6: buildVariant(fontWeightBlack, 16, 20, -0.03),
+    body: buildVariant(fontWeightMedium, 14, 22, 0.15),
+    b1: buildVariant(fontWeightMedium, 24, 32, -0.5),
+    b1Bold: buildVariant(fontWeightBold, 24, 32, 0.15),
+    b1Link: buildVariant(fontWeightMedium, fontSize, 22, 0.15),
+
+    b2: buildVariant(fontWeightMedium, fontSize, 22, 0.15),
+    b2Bold: buildVariant(fontWeightMedium, fontSize, 22, 0.15),
+    b2Link: buildVariant(fontWeightMedium, fontSize, 22, 0.15),
+
+    b3: buildVariant(fontWeightMedium, fontSize, 22, 0.15),
+    b3Bold: buildVariant(fontWeightMedium, fontSize, 22, 0.15),
+    b3Link: buildVariant(fontWeightMedium, fontSize, 22, 0.15),
+
+    b4: buildVariant(fontWeightMedium, fontSize, 22, 0.15),
+    b4Bold: buildVariant(fontWeightMedium, fontSize, 22, 0.15),
+    b4Link: buildVariant(fontWeightMedium, fontSize, 22, 0.15),
+
+    b5: buildVariant(fontWeightMedium, fontSize, 22, 0.15),
+    b5Bold: buildVariant(fontWeightMedium, fontSize, 22, 0.15),
+    b5Link: buildVariant(fontWeightMedium, fontSize, 22, 0.15),
   };
 
   const size = {
@@ -156,6 +173,7 @@ export interface ThemeTypographyVariantTypes {
   h5: ThemeTypographyVariant;
   h6: ThemeTypographyVariant;
   body: ThemeTypographyVariant;
+  b1: ThemeTypographyVariant;
   bodySmall: ThemeTypographyVariant;
   code: ThemeTypographyVariant;
 }

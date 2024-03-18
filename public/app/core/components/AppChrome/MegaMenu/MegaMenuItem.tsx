@@ -68,7 +68,7 @@ export function MegaMenuItem({ link, activeItem, level = 0, onClick }: Props) {
       >
         {level !== 0 && <Indent level={level === MAX_DEPTH ? level - 1 : level} spacing={3} />}
         {level === MAX_DEPTH && <div className={styles.itemConnector} />}
-        <div className={styles.collapseButtonWrapper}>
+        {/* <div className={styles.collapseButtonWrapper}>
           {showExpandButton && (
             <IconButton
               aria-label={`${sectionExpanded ? 'Collapse' : 'Expand'} section ${link.text}`}
@@ -79,7 +79,7 @@ export function MegaMenuItem({ link, activeItem, level = 0, onClick }: Props) {
               variant="secondary"
             />
           )}
-        </div>
+        </div> */}
         <div className={styles.collapsibleSectionWrapper}>
           <MegaMenuItemText
             isActive={isActive}
@@ -103,6 +103,18 @@ export function MegaMenuItem({ link, activeItem, level = 0, onClick }: Props) {
               )}
               <Text truncate>{link.text}</Text>
             </div>
+            <div className={styles.collapseButtonWrapper}>
+          {showExpandButton && (
+            <IconButton
+              aria-label={`${sectionExpanded ? 'Collapse' : 'Expand'} section ${link.text}`}
+              className={styles.collapseButton}
+              onClick={() => setSectionExpanded(!sectionExpanded)}
+              name={sectionExpanded ? 'angle-down' : 'angle-right'}
+              size="md"
+              variant="secondary"
+            />
+          )}
+        </div>
           </MegaMenuItemText>
         </div>
       </div>
@@ -143,7 +155,7 @@ const getStyles = (theme: GrafanaTheme2) => ({
     display: 'flex',
     alignItems: 'center',
     gap: theme.spacing(1),
-    height: theme.spacing(4),
+    height: theme.spacing(6),
     paddingLeft: theme.spacing(0.5),
     position: 'relative',
   }),
@@ -171,6 +183,7 @@ const getStyles = (theme: GrafanaTheme2) => ({
   }),
   collapseButton: css({
     margin: 0,
+    color: theme.colors.text.primary, 
   }),
   collapsibleSectionWrapper: css({
     alignItems: 'center',
@@ -182,7 +195,7 @@ const getStyles = (theme: GrafanaTheme2) => ({
   labelWrapper: css({
     display: 'flex',
     alignItems: 'center',
-    gap: theme.spacing(2),
+    gap: theme.spacing(0.5),
     minWidth: 0,
     paddingLeft: theme.spacing(1),
   }),

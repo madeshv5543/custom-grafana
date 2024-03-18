@@ -109,6 +109,7 @@ const DashboardEmpty = ({ dashboard, canCreate }: Props) => {
                 <Button
                   icon="plus"
                   fill="outline"
+                  size="lg"
                   data-testid={selectors.pages.AddDashboard.itemButton('Add a panel from the panel library button')}
                   onClick={() => {
                     DashboardInteractions.emptyDashboardButtonClicked({ item: 'import_from_library' });

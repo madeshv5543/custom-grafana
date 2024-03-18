@@ -212,13 +212,24 @@ export function DataSourceModal({
           )}
         </div>
         <div className={styles.newDSSection}>
-          <span className={styles.newDSDescription}>
+          {/* <span className={styles.newDSDescription}>
             <Trans i18nKey="data-source-picker.modal.configure-new-data-source">
               Open a new tab and configure a data source
             </Trans>
-          </span>
+          </span> */}
           <AddNewDataSourceButton
             variant="secondary"
+            fill="outline"
+            onClick={() => {
+              reportInteraction(INTERACTION_EVENT_NAME, {
+                item: INTERACTION_ITEM.CONFIG_NEW_DS,
+                src: analyticsInteractionSrc,
+              });
+              onDismiss();
+            }}
+          />
+          <AddNewDataSourceButton
+            variant="primary"
             onClick={() => {
               reportInteraction(INTERACTION_EVENT_NAME, {
                 item: INTERACTION_ITEM.CONFIG_NEW_DS,

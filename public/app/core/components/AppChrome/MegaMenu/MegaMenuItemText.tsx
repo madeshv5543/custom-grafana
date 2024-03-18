@@ -56,7 +56,7 @@ const getStyles = (theme: GrafanaTheme2, isActive: Props['isActive']) => ({
 
     '&:hover, &:focus-visible': {
       color: theme.colors.jdsColors.menuText,
-      textDecoration: 'underline',
+      textDecoration: 'none',
     },
 
     '&:focus-visible': {
@@ -68,26 +68,26 @@ const getStyles = (theme: GrafanaTheme2, isActive: Props['isActive']) => ({
   }),
   containerActive: css({
     backgroundColor: theme.colors.jdsColors.menu2,
-    borderTopRightRadius: theme.shape.radius.default,
-    borderBottomRightRadius: theme.shape.radius.default,
+    borderRadius: theme.spacing(1.5),
     position: 'relative',
 
-    '&::before': {
-      backgroundColor: theme.colors.jdsColors.menu3,
-      borderRadius: theme.shape.radius.default,
-      content: '" "',
-      display: 'block',
-      height: '100%',
-      position: 'absolute',
-      transform: 'translateX(-50%)',
-      width: theme.spacing(0.5),
-    },
+    // '&::before': {
+    //   backgroundColor: theme.colors.jdsColors.menu3,
+    //   borderRadius: theme.shape.radius.default,
+    //   content: '" "',
+    //   display: 'block',
+    //   height: '100%',
+    //   position: 'absolute',
+    //   transform: 'translateX(-50%)',
+    //   width: theme.spacing(0.5),
+    // },
   }),
   linkContent: css({
     alignItems: 'center',
     display: 'flex',
-    gap: '0.5rem',
     height: '100%',
     width: '100%',
+    padding: theme.spacing(1.5, 2),
+    justifyContent: 'space-between',
   }),
 });
