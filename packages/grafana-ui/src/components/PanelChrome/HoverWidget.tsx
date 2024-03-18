@@ -69,12 +69,12 @@ function getStyles(theme: GrafanaTheme2) {
       transition: `all .1s linear`,
       display: 'flex',
       position: 'absolute',
-      zIndex: 1,
+      zIndex: 1, 
       right: 0,
       boxSizing: 'content-box',
       alignItems: 'center',
-      background: theme.colors.background.secondary,
-      color: theme.colors.text.primary,
+      background: theme.colors.jdsColors.widgetMoreOptionBackgroundColor,
+      color: theme.colors.jdsColors.widgetMoreOptionHoverTextColor,
       border: `1px solid ${theme.colors.border.weak}`,
       borderRadius: theme.shape.radius.default,
       height: theme.spacing(4),
@@ -99,14 +99,14 @@ function getStyles(theme: GrafanaTheme2) {
       background: 'inherit',
       border: 'none',
       '&:hover': {
-        background: theme.colors.secondary.main,
+        background: theme.colors.jdsColors.widgetMoreOptionHoverBackground,
       },
     }),
     draggableIcon: css({
       transform: 'rotate(45deg)',
-      color: theme.colors.text.secondary,
+      color: theme.colors.jdsColors.widgetMoreOptionTextColor,
       '&:hover': {
-        color: theme.colors.text.primary,
+        color: theme.colors.jdsColors.widgetMoreOptionHoverTextColor,
       },
     }),
   };

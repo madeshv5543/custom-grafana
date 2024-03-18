@@ -103,7 +103,7 @@ const getStyles = (theme: GrafanaTheme2, searchBarHidden?: boolean) => {
       zIndex: theme.zIndex.modal,
       position: 'fixed',
       top: searchBarHidden ? 0 : TOP_BAR_LEVEL_HEIGHT,
-      backgroundColor: theme.colors.background.primary,
+      backgroundColor: theme.colors.jdsColors.menu1,
       boxSizing: 'content-box',
       flex: '1 1 0',
 

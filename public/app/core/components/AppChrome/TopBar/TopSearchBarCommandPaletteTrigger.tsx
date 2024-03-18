@@ -99,8 +99,9 @@ const getStyles = (theme: GrafanaTheme2) => {
       {
         textAlign: 'left',
         paddingLeft: 28,
-        color: theme.colors.text.disabled,
-
+        backgroundColor: theme.colors.jdsColors.headerSearchbarBackgroundColor,
+        color: theme.colors.jdsColors.headerSearchbarTextColor,
+        borderRadius: theme.shape.radius.button,
         // We want the focus styles to appear only when tabbing through, not when clicking the button
         // (and when focus is restored after command palette closes)
         '&:focus': {

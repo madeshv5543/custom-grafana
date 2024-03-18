@@ -83,8 +83,8 @@ const getResultItemStyles = (theme: GrafanaTheme2) => {
       margin: theme.spacing(0, 1),
     }),
     activeRow: css({
-      color: theme.colors.text.maxContrast,
-      background: theme.colors.emphasize(theme.colors.background.primary, 0.03),
+      color: theme.colors.jdsColors.menuActivetext,
+      background: theme.colors.emphasize(theme.colors.jdsColors.menu2, 0.03),
       '&:before': {
         display: 'block',
         content: '" "',

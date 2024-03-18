@@ -175,19 +175,20 @@ const getStyles = (theme: GrafanaTheme2) => {
 
         '&:hover': {
           color: theme.colors.text.disabled,
-          background: theme.colors.action.disabledBackground,
+          background: 'none',
           boxShadow: 'none',
         },
       },
     }),
     default: css({
-      color: theme.colors.text.secondary,
+      color: theme.colors.jdsColors.iconDefault,
       background: 'transparent',
       border: `1px solid transparent`,
 
       '&:hover': {
-        color: theme.colors.text.primary,
-        background: theme.colors.background.secondary,
+        color: theme.colors.jdsColors.iconHoverColor,
+        background: 'transparent',
+        borderRadius: '25px',
       },
     }),
     canvas: defaultOld,

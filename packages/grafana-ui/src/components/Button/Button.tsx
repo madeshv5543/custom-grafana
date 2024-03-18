@@ -170,7 +170,7 @@ export const getButtonStyles = (props: StyleProps) => {
   const variantStyles = getPropertiesForVariant(theme, variant, fill);
   const disabledStyles = getPropertiesForDisabled(theme, variant, fill);
   const focusStyle = getFocusStyles(theme);
-  const paddingMinusBorder = theme.spacing.gridSize * padding - 1;
+  // const paddingMinusBorder = theme.spacing.gridSize * padding - 1;
 
   return {
     button: css({
@@ -178,15 +178,15 @@ export const getButtonStyles = (props: StyleProps) => {
       display: 'inline-flex',
       alignItems: 'center',
       fontSize: fontSize,
-      fontWeight: theme.typography.fontWeightMedium,
+      fontWeight: theme.typography.fontWeightBold,
       fontFamily: theme.typography.fontFamily,
-      padding: `0 ${paddingMinusBorder}px`,
+      padding: padding,
       height: theme.spacing(height),
       // Deduct border from line-height for perfect vertical centering on windows and linux
       lineHeight: `${theme.spacing.gridSize * height - 2}px`,
       verticalAlign: 'middle',
       cursor: 'pointer',
-      borderRadius: theme.shape.radius.default,
+      borderRadius: theme.shape.radius.button,
       '&:focus': focusStyle,
       '&:focus-visible': focusStyle,
       '&:focus:not(:focus-visible)': getMouseFocusStyles(theme),
@@ -211,7 +211,7 @@ export const getButtonStyles = (props: StyleProps) => {
           marginLeft: theme.spacing(-padding / 2),
         })
       : css({
-          marginRight: theme.spacing(padding / 2),
+          marginRight: theme.spacing( 2 / 2),
         }),
     content: css({
       display: 'flex',
@@ -228,20 +228,21 @@ function getButtonVariantStyles(theme: GrafanaTheme2, color: ThemeRichColor, fil
   let outlineBorderColor = color.border;
   let borderColor = 'transparent';
   let hoverBorderColor = 'transparent';
+  color.text = theme.colors.secondary.text;
 
   // Secondary button has some special rules as we lack theem color token to
   // specify border color for normal button vs border color for outline button
   if (color.name === 'secondary') {
     borderColor = color.border;
     hoverBorderColor = theme.colors.emphasize(color.border, 0.25);
-    outlineBorderColor = theme.colors.border.strong;
+    outlineBorderColor = theme.colors.jdsColors.buttonBorderColor;
   }
 
   if (fill === 'outline') {
     return {
       background: 'transparent',
       color: color.text,
-      border: `1px solid ${outlineBorderColor}`,
+      border: `1px solid ${theme.colors.jdsColors.buttonBorderColor}`,
       transition: theme.transitions.create(['background-color', 'border-color', 'color'], {
         duration: theme.transitions.duration.short,
       }),

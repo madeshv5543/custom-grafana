@@ -25,6 +25,9 @@ export interface ThemeComponents {
     borderColor: string;
     boxShadow: string;
     background: string;
+    textPrimary: string;
+    textSecondary: string;
+    borderRadius: string;
   };
   dropdown: {
     background: string;
@@ -58,16 +61,19 @@ export function createComponents(colors: ThemeColors, shadows: ThemeShadows): Th
   const panel = {
     padding: 1,
     headerHeight: 4,
-    background: colors.background.primary,
+    background: colors.background.panelPrimary,
     borderColor: colors.border.weak,
     boxShadow: 'none',
+    textPrimary: colors.text.panelPrimary,
+    textSecondary: colors.text.panelSecondary,
+    borderRadius: '14px'
   };
 
   const input = {
     borderColor: colors.border.medium,
     borderHover: colors.border.strong,
-    text: colors.text.primary,
-    background: colors.mode === 'dark' ? colors.background.canvas : colors.background.primary,
+    text: colors.jdsColors.inputTextColor,
+    background: colors.mode === 'dark' ? colors.jdsColors.inputBackground : colors.background.primary,
   };
 
   return {
@@ -82,8 +88,8 @@ export function createComponents(colors: ThemeColors, shadows: ThemeShadows): Th
       background: input.background,
     },
     tooltip: {
-      background: colors.background.secondary,
-      text: colors.text.primary,
+      background: colors.jdsColors.tooltipBackgroundColor,
+      text: colors.jdsColors.tooltipTextColor,
     },
     dashboard: {
       background: colors.background.canvas,

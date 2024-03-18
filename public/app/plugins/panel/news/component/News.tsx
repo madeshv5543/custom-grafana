@@ -86,7 +86,7 @@ const getStyles = (theme: GrafanaTheme2) => ({
     marginBottom: theme.spacing(0.5),
     marginRight: theme.spacing(1),
     borderBottom: `2px solid ${theme.colors.border.weak}`,
-    background: theme.colors.background.primary,
+    background: theme.colors.jdsColors.blogbackground,
     flexDirection: 'column',
     flexShrink: 0,
   }),
@@ -116,12 +116,12 @@ const getStyles = (theme: GrafanaTheme2) => ({
     },
   }),
   link: css({
-    color: theme.colors.text.link,
+    color: theme.colors.jdsColors.blogtitlt,
     display: 'inline-block',
 
     '&:hover': {
-      color: theme.colors.text.link,
-      textDecoration: 'underline',
+      color: theme.colors.jdsColors.blogtitlt,
+      textDecoration: 'none',
     },
   }),
   title: css({
@@ -131,13 +131,13 @@ const getStyles = (theme: GrafanaTheme2) => ({
   content: css({
     p: {
       marginBottom: theme.spacing(0.5),
-      color: theme.colors.text.primary,
+      color: theme.colors.jdsColors.blogText,
     },
   }),
   date: css({
     marginBottom: theme.spacing(0.5),
     fontWeight: 500,
     borderRadius: `0 0 0 ${theme.shape.radius.default}`,
-    color: theme.colors.text.secondary,
+    color: theme.colors.jdsColors.blogDate,
   }),
 });

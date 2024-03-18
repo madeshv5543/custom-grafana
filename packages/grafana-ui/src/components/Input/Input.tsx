@@ -186,7 +186,7 @@ export const getInputStyles = stylesFactory(({ theme, invalid = false, width }: 
         position: 'relative',
         zIndex: 0,
         flexGrow: 1,
-        borderRadius: theme.shape.radius.default,
+        borderRadius: theme.shape.radius.button,
         height: '100%',
         width: '100%',
       })

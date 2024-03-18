@@ -99,7 +99,7 @@ const getStyles = (theme: GrafanaTheme2) => {
       label: 'page-inner',
       padding: theme.spacing(2),
       borderBottom: 'none',
-      background: theme.colors.background.primary,
+      background: theme.colors.background.canvas,
       display: 'flex',
       flexDirection: 'column',
       flexGrow: 1,

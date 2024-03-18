@@ -49,13 +49,13 @@ MegaMenuItemText.displayName = 'MegaMenuItemText';
 const getStyles = (theme: GrafanaTheme2, isActive: Props['isActive']) => ({
   container: css({
     alignItems: 'center',
-    color: isActive ? theme.colors.text.primary : theme.colors.text.secondary,
+    color: isActive ? theme.colors.jdsColors.menuActivetext : theme.colors.jdsColors.menuText,
     height: '100%',
     position: 'relative',
     width: '100%',
 
     '&:hover, &:focus-visible': {
-      color: theme.colors.text.primary,
+      color: theme.colors.jdsColors.menuText,
       textDecoration: 'underline',
     },
 
@@ -67,13 +67,13 @@ const getStyles = (theme: GrafanaTheme2, isActive: Props['isActive']) => ({
     },
   }),
   containerActive: css({
-    backgroundColor: theme.colors.background.secondary,
+    backgroundColor: theme.colors.jdsColors.menu2,
     borderTopRightRadius: theme.shape.radius.default,
     borderBottomRightRadius: theme.shape.radius.default,
     position: 'relative',
 
     '&::before': {
-      backgroundImage: theme.colors.gradients.brandVertical,
+      backgroundColor: theme.colors.jdsColors.menu3,
       borderRadius: theme.shape.radius.default,
       content: '" "',
       display: 'block',

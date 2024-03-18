@@ -9,7 +9,7 @@ export const getModalStyles = (theme: GrafanaTheme2) => {
     modal: css({
       position: 'fixed',
       zIndex: theme.zIndex.modal,
-      background: theme.colors.background.primary,
+      background: theme.colors.jdsColors.modelBackgroundColor,
       boxShadow: theme.shadows.z3,
       borderRadius,
       border: `1px solid ${theme.colors.border.weak}`,
@@ -23,7 +23,7 @@ export const getModalStyles = (theme: GrafanaTheme2) => {
       marginRight: 'auto',
       top: '10%',
       maxHeight: '80%',
-      display: 'flex',
+      display: 'flex', 
       flexDirection: 'column',
     }),
     modalBackdrop: css({

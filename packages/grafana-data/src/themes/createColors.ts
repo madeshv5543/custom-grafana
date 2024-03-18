@@ -25,6 +25,8 @@ export interface ThemeColorsBase<TColor> {
     link: string;
     /** Used for auto white or dark text on colored backgrounds */
     maxContrast: string;
+    panelPrimary: string;
+    panelSecondary: string;
   };
 
   background: {
@@ -34,7 +36,56 @@ export interface ThemeColorsBase<TColor> {
     primary: string;
     /** Cards and elements that need to stand out on the primary background */
     secondary: string;
+    header: string;
+    panelPrimary: string;
+    panelSecondary: string;
+
   };
+
+  jdsColors: {
+    menu1: string,
+    menu2: string,
+    menu3: string,
+    menuText: string,
+    menuActivetext: string,
+    menuhovertext: string,
+    blogbackground: string,
+    blogDate: string,
+    blogtitlt: string,
+    blogText: string,
+    linkText: string,
+    linkHover: string,
+    inputBackground: string,
+    inputTextColor: string,
+    breadcrumText: string,
+    iconPrimary: string,
+    iconDefault: string,
+    iconHoverColor: string,
+    iconHoverBackground: string,
+    iconPressedColor: string,
+    iconPressedBackground: string,
+    moreMenuBackground: string,
+    moreMenuTextColor: string,
+    moreMenuItemHoverBg: string,
+    moreMenuItemHoverText: string,
+    tableHeaderBackgroundColor: string,
+    tableHeaderTextColor: string,
+    tableHeaderRowBg: string,
+    tableHeaderRowTextColor: string,
+    tableHeaderRowBgHover: string,
+    checkboxBorderColor: string,
+    modelBackgroundColor: string,
+    modelBackdropColor: string,
+    tooltipBackgroundColor: string,
+    tooltipTextColor: string,
+    widgetMoreOptionBackgroundColor: string,
+    widgetMoreOptionTextColor: string,
+    widgetMoreOptionHoverBackground: string,
+    widgetMoreOptionHoverTextColor: string,
+    buttonBorderColor: string,
+    headerSearchbarBackgroundColor: string,
+    headerSearchbarTextColor: string
+  }
 
   border: {
     weak: string;
@@ -105,19 +156,21 @@ class DarkColors implements ThemeColorsBase<Partial<ThemeRichColor>> {
     disabled: `rgba(${this.whiteBase}, 0.6)`,
     link: palette.blueDarkText,
     maxContrast: palette.white,
+    panelPrimary: '',
+    panelSecondary: ''
   };
 
   primary = {
-    main: palette.blueDarkMain,
-    text: palette.blueDarkText,
-    border: palette.blueDarkText,
+    main: palette.lightMidnightSky50,
+    text: palette.lightMidnightSkyInverse,
+    border: palette.lightMidnightSky50,
   };
 
   secondary = {
-    main: `rgba(${this.whiteBase}, 0.10)`,
+    main: palette.lightMidnightSky30,
     shade: `rgba(${this.whiteBase}, 0.14)`,
     transparent: `rgba(${this.whiteBase}, 0.08)`,
-    text: this.text.primary,
+    text: palette.lightMidnightSky70,
     contrastText: `rgb(${this.whiteBase})`,
     border: `rgba(${this.whiteBase}, 0.08)`,
   };
@@ -139,11 +192,69 @@ class DarkColors implements ThemeColorsBase<Partial<ThemeRichColor>> {
     text: palette.orangeDarkText,
   };
 
+  // background = {
+  //   canvas: palette.gray05,
+  //   primary: palette.gray10,
+  //   secondary: palette.gray15,
+  //   header: palette.jdsbackgroundPrimary,
+  //   panelPrimary: palette.jdsPanelPrimaryBackground,
+  //   panelSecondary: palette.jdsPanelPrimaryBackground
+  // };
+
   background = {
-    canvas: palette.gray05,
+    canvas: palette.jdsbackgroundSecondary,
     primary: palette.gray10,
     secondary: palette.gray15,
+    header: palette.jdsbackgroundPrimary,
+    panelPrimary: palette.jdsPanelPrimaryBackground,
+    panelSecondary: palette.jdsPanelPrimaryBackground
   };
+
+  jdsColors={
+    menu1:'',
+    menu2:'',
+    menu3:'',
+    menuText:'',
+    blogbackground:'',
+    menuActivetext:'',
+    menuhovertext:'',
+    blogDate:'',
+    blogtitlt:'',
+    blogText:'',
+    linkText:'',
+    linkHover:'',
+    inputBackground:'',
+    inputTextColor:palette.lightMidnightBackground,
+    breadcrumText:'',
+    iconPrimary:'',
+    iconDefault: '',
+    iconHoverColor: '',
+    iconHoverBackground: '',
+    iconPressedColor: '',
+    iconPressedBackground: '',
+    moreMenuBackground: '',
+    moreMenuTextColor: '',
+    moreMenuItemHoverBg: '',
+    moreMenuItemHoverText: '',
+    tableHeaderBackgroundColor: '',
+    tableHeaderTextColor: '',
+    tableHeaderRowBg: '',
+    tableHeaderRowTextColor: '',
+    tableHeaderRowBgHover: '',
+    checkboxBorderColor: '',
+    modelBackgroundColor: '',
+    modelBackdropColor: '',
+    tooltipBackgroundColor: '',
+    tooltipTextColor: '',
+    widgetMoreOptionBackgroundColor: '',
+    widgetMoreOptionTextColor: '',
+    widgetMoreOptionHoverBackground: '',
+    widgetMoreOptionHoverTextColor:'',
+    buttonBorderColor:'',
+    headerSearchbarBackgroundColor: '',
+    headerSearchbarTextColor: ''
+  }
+
 
   action = {
     hover: `rgba(${this.whiteBase}, 0.16)`,
@@ -157,8 +268,8 @@ class DarkColors implements ThemeColorsBase<Partial<ThemeRichColor>> {
   };
 
   gradients = {
-    brandHorizontal: 'linear-gradient(270deg, #F55F3E 0%, #FF8833 100%)',
-    brandVertical: 'linear-gradient(0.01deg, #F55F3E 0.01%, #FF8833 99.99%)',
+    brandHorizontal: 'linear-gradient(270deg, #0078AD 0%, #0078AD 100%)',
+    brandVertical: 'linear-gradient(0.01deg, #0078AD 0.01%, #0078AD 99.99%)',
   };
 
   contrastThreshold = 3;
@@ -183,6 +294,8 @@ class LightColors implements ThemeColorsBase<Partial<ThemeRichColor>> {
     disabled: `rgba(${this.blackBase}, 0.50)`,
     link: this.primary.text,
     maxContrast: palette.black,
+    panelPrimary: '',
+    panelSecondary: ''
   };
 
   border = {
@@ -225,7 +338,55 @@ class LightColors implements ThemeColorsBase<Partial<ThemeRichColor>> {
     canvas: palette.gray90,
     primary: palette.white,
     secondary: palette.gray100,
+    header: palette.jdsbackgroundPrimary,
+    panelPrimary: palette.jdsPanelPrimaryBackground,
+    panelSecondary: palette.jdsPanelPrimaryBackground
   };
+
+  jdsColors={
+    menu1:'',
+    menu2:'',
+    menu3:'',
+    menuText:'',
+    menuActivetext:'',
+    menuhovertext:'',
+    blogbackground:'',
+    blogDate:'',
+    blogtitlt:'',
+    blogText:'',
+    linkText:'',
+    linkHover:'',
+    inputBackground:'',
+    inputTextColor:palette.lightMidnightBackground,
+    breadcrumText:'',
+    iconPrimary:'',
+    iconDefault: '',
+    iconHoverColor: '',
+    iconHoverBackground: '',
+    iconPressedColor: '',
+    iconPressedBackground: '',
+    moreMenuBackground: '',
+    moreMenuTextColor: '',
+    moreMenuItemHoverBg: '',
+    moreMenuItemHoverText: '',
+    tableHeaderBackgroundColor: '',
+    tableHeaderTextColor: '',
+    tableHeaderRowBg: '',
+    tableHeaderRowTextColor: '',
+    tableHeaderRowBgHover: '',
+    checkboxBorderColor: '',
+    modelBackgroundColor: '',
+    modelBackdropColor: '',
+    tooltipBackgroundColor:  palette.lightMidnightSky50,
+    tooltipTextColor: palette.lightMidnightSkyInverse,
+    widgetMoreOptionBackgroundColor: '',
+    widgetMoreOptionTextColor: '',
+    widgetMoreOptionHoverBackground: '',
+    widgetMoreOptionHoverTextColor:'',
+    buttonBorderColor: '',
+    headerSearchbarBackgroundColor: '',
+    headerSearchbarTextColor: ''
+  }
 
   action = {
     hover: `rgba(${this.blackBase}, 0.12)`,
@@ -239,8 +400,8 @@ class LightColors implements ThemeColorsBase<Partial<ThemeRichColor>> {
   };
 
   gradients = {
-    brandHorizontal: 'linear-gradient(90deg, #FF8833 0%, #F53E4C 100%)',
-    brandVertical: 'linear-gradient(0.01deg, #F53E4C -31.2%, #FF8833 113.07%)',
+    brandHorizontal: 'linear-gradient(270deg, #0078AD 0%, #0078AD 100%)',
+    brandVertical: 'linear-gradient(0.01deg, #0078AD 0.01%, #0078AD 99.99%)',
   };
 
   contrastThreshold = 3;
@@ -248,8 +409,140 @@ class LightColors implements ThemeColorsBase<Partial<ThemeRichColor>> {
   tonalOffset = 0.2;
 }
 
+class JdsDarkColors implements ThemeColorsBase<Partial<ThemeRichColor>> {
+  mode: ThemeColorsMode = 'dark';
+
+  // Used to get more white opacity colors
+  whiteBase = '204, 204, 220';
+
+  border = {
+    weak: `rgba(${this.whiteBase}, 0.12)`,
+    medium: `rgba(${this.whiteBase}, 0.20)`,
+    strong: `rgba(${this.whiteBase}, 0.30)`,
+  };
+
+  text = {
+    primary: palette.lightMidnightSkyGrey100,
+    secondary: palette.lightMidnightSkyGrey80,
+    disabled: `rgba(${this.whiteBase}, 0.6)`,
+    link: palette.lightMidnightSkyGrey100,
+    maxContrast: palette.white,
+    panelPrimary: palette.jdsPanelPrimaryText,
+    panelSecondary: palette.jdsPanelSecondaryBackground
+  };
+
+  jdsColors={
+    menu1:palette.lightMidnightBackground,
+    menu2:palette.lightMidnightSky20,
+    menu3:palette.lightMidnightSky50,
+    menuText: palette.lightMidnightSkyGrey100,
+    menuActivetext:palette.lightMidnightSky60,
+    menuhovertext:'',
+    blogbackground:palette.lightMidnightSkyGrey20,
+    blogDate:palette.lightMidnightSkyGrey60,
+    blogtitlt:palette.lightMidnightSky50,
+    blogText:palette.lightMidnightBackground,
+    linkText:palette.lightMidnightSkyGrey100,
+    linkHover:palette.lightMidnightSky50,
+    inputBackground:palette.lightMidnightSkyGrey20,
+    inputTextColor:palette.lightMidnightSkyGrey80,
+    breadcrumText: palette.lightMidnightBackground,
+    iconPrimary:palette.lightMidnightBackground,
+    iconDefault: palette.lightMidnightBackground,
+    iconHoverColor: palette.lightMidnightSkyInverse,
+    iconHoverBackground: palette.lightMidnightSky60,
+    iconPressedColor: palette.lightMidnightSky30,
+    iconPressedBackground: palette.lightMidnightSky60,
+    moreMenuBackground: palette.lightMidnightBackground,
+    moreMenuTextColor: palette.lightMidnightSkyGrey80,
+    moreMenuItemHoverBg: palette.lightMidnightSky20,
+    moreMenuItemHoverText: palette.lightMidnightSky50,
+    tableHeaderBackgroundColor: palette.lightMidnightSkyGrey20,
+    tableHeaderTextColor: palette.lightMidnightSkyGrey100,
+    tableHeaderRowBg: palette.lightMidnightBackground,
+    tableHeaderRowTextColor: palette.lightMidnightSkyGrey100,
+    tableHeaderRowBgHover: palette.lightMidnightSky20,
+    checkboxBorderColor: palette.lightMidnightSkyGrey100,
+    modelBackgroundColor: palette.lightMidnightSkyGrey20,
+    modelBackdropColor: palette.lightMidnightSkyGrey20,
+    tooltipBackgroundColor: palette.lightMidnightSky50,
+    tooltipTextColor: palette.lightMidnightSkyInverse,
+    widgetMoreOptionBackgroundColor:palette.lightMidnightSky50 ,
+    widgetMoreOptionTextColor: palette.lightMidnightSkyInverse,
+    widgetMoreOptionHoverBackground:  palette.lightMidnightSky60,
+    widgetMoreOptionHoverTextColor:palette.lightMidnightSkyInverse,
+    buttonBorderColor: palette.lightMidnightSkyGrey60,
+    headerSearchbarBackgroundColor: palette.lightMidnightSky60,
+    headerSearchbarTextColor: palette.lightMidnightBackground
+  }
+
+  primary = {
+    main: palette.lightMidnightSky50,
+    text: palette.lightMidnightSkyInverse,
+    border: palette.lightMidnightSky50,
+  }
+
+  secondary = {
+    main: palette.lightMidnightSky30,
+    shade: `rgba(${this.whiteBase}, 0.14)`,
+    transparent: `rgba(${this.whiteBase}, 0.08)`,
+    text: palette.lightMidnightSky60,
+    contrastText: `rgb(${this.whiteBase})`,
+    border: `rgba(${this.whiteBase}, 0.08)`,
+  };
+
+
+  info = this.primary;
+
+  error = {
+    main: palette.redDarkMain,
+    text: palette.redDarkText,
+  };
+
+  success = {
+    main: palette.greenDarkMain,
+    text: palette.greenDarkText,
+  };
+
+  warning = {
+    main: palette.orangeDarkMain,
+    text: palette.orangeDarkText,
+  };
+
+  background = {
+    canvas: palette.jdsbackgroundSecondary,
+    primary: palette.gray10,
+    secondary: palette.gray15,
+    header: palette.jdsbackgroundPrimary,
+    panelPrimary: palette.jdsPanelPrimaryBackground,
+    panelSecondary: palette.jdsPanelPrimaryBackground
+  };
+
+
+
+  action = {
+    hover: `rgba(${this.whiteBase}, 0.16)`,
+    selected: `rgba(${this.whiteBase}, 0.12)`,
+    selectedBorder: palette.orangeDarkMain,
+    focus: `rgba(${this.whiteBase}, 0.16)`,
+    hoverOpacity: 0.08,
+    disabledText: this.text.disabled,
+    disabledBackground: `rgba(${this.whiteBase}, 0.04)`,
+    disabledOpacity: 0.38,
+  };
+
+  gradients = {
+    brandHorizontal: 'linear-gradient(270deg, #0078AD 0%, #0078AD 100%)',
+    brandVertical: 'linear-gradient(0.01deg, #0078AD 0.01%, #0078AD 99.99%)',
+  };
+
+  contrastThreshold = 3;
+  hoverFactor = 0.03;
+  tonalOffset = 0.15;
+}
+
 export function createColors(colors: ThemeColorsInput): ThemeColors {
-  const dark = new DarkColors();
+  const dark = new JdsDarkColors();
   const light = new LightColors();
   const base = (colors.mode ?? 'dark') === 'dark' ? dark : light;
   const {

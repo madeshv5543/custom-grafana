@@ -90,7 +90,7 @@ export const getCheckboxStyles = (theme: GrafanaTheme2, invalid = false) => {
       width: '100% !important', // global styles unset this
       height: '100%',
       opacity: 0,
-
+      background: 'transparent',
       '&:focus + span, &:focus-visible + span': getFocusStyles(theme),
 
       '&:focus:not(:focus-visible) + span': getMouseFocusStyles(theme),
@@ -140,7 +140,7 @@ export const getCheckboxStyles = (theme: GrafanaTheme2, invalid = false) => {
     inputIndeterminate: css({
       "&[aria-checked='mixed'] + span": {
         border: `1px solid ${getBorderColor(theme.colors.primary.main)}`,
-        background: theme.colors.primary.main,
+        background: 'transparent',
 
         '&:hover': {
           background: theme.colors.primary.shade,
@@ -183,12 +183,12 @@ export const getCheckboxStyles = (theme: GrafanaTheme2, invalid = false) => {
       width: theme.spacing(checkboxSize),
       height: theme.spacing(checkboxSize),
       borderRadius: theme.shape.radius.default,
-      background: theme.components.input.background,
-      border: `1px solid ${getBorderColor(theme.components.input.borderColor)}`,
+      background: 'transparent',
+      border: `1px solid ${getBorderColor(theme.colors.jdsColors.checkboxBorderColor)}`,
 
       '&:hover': {
         cursor: 'pointer',
-        borderColor: getBorderColor(theme.components.input.borderHover),
+        borderColor: getBorderColor(theme.colors.jdsColors.checkboxBorderColor),
       },
     }),
     label: cx(

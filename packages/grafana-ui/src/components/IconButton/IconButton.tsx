@@ -107,10 +107,10 @@ const getStyles = (theme: GrafanaTheme2, size: IconSize, variant: IconButtonVari
   // theme.spacing.gridSize originates from 2*4px for padding and letting the IconSize generally decide on the hoverSize
   const hoverSize = getSvgSize(size) + theme.spacing.gridSize;
 
-  let iconColor = theme.colors.text.primary;
+  let iconColor = theme.colors.jdsColors.iconPrimary;
 
   if (variant === 'primary') {
-    iconColor = theme.colors.primary.text;
+    iconColor = theme.colors.jdsColors.iconPrimary;
   } else if (variant === 'destructive') {
     iconColor = theme.colors.error.text;
   }

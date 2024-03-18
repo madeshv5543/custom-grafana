@@ -116,10 +116,10 @@ $brand-gradient-vertical: ${theme.colors.gradients.brandVertical};
 
 // Links
 // -------------------------
-$link-color: ${theme.colors.text.primary};
+$link-color: ${theme.colors.jdsColors.linkText}; //};
 $link-color-disabled: ${theme.colors.text.disabled};
 $link-hover-color: ${theme.colors.text.maxContrast};
-$external-link-color: ${theme.colors.text.link};
+$external-link-color: ${theme.colors.jdsColors.linkText};
 
 // Typography
 // -------------------------

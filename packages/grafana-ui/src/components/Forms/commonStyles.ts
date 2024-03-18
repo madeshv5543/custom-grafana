@@ -31,14 +31,14 @@ export const sharedInputStyle = (theme: GrafanaTheme2, invalid = false) => {
 
       '&:-webkit-autofill, &:-webkit-autofill:hover': {
         /* Welcome to 2005. This is a HACK to get rid od Chromes default autofill styling */
-        boxShadow: `inset 0 0 0 1px rgba(255, 255, 255, 0), inset 0 0 0 100px ${background}!important`,
+        // boxShadow: `inset 0 0 0 1px rgba(255, 255, 255, 0), inset 0 0 0 100px ${background}!important`,
         WebkitTextFillColor: `${textColor} !important`,
         borderColor: autoFillBorder,
       },
 
       '&:-webkit-autofill:focus': {
         /* Welcome to 2005. This is a HACK to get rid od Chromes default autofill styling */
-        boxShadow: `0 0 0 2px ${theme.colors.background.primary}, 0 0 0px 4px ${theme.colors.primary.main}, inset 0 0 0 1px rgba(255, 255, 255, 0), inset 0 0 0 100px ${background}!important`,
+        // boxShadow: `0 0 0 2px ${theme.colors.background.primary}, 0 0 0px 4px ${theme.colors.primary.main}, inset 0 0 0 1px rgba(255, 255, 255, 0), inset 0 0 0 100px ${background}!important`,
         WebkitTextFillColor: `${textColor} !important`,
       },
 
@@ -109,21 +109,21 @@ export function getPropertiesForButtonSize(size: ComponentSize, theme: GrafanaTh
   switch (size) {
     case 'sm':
       return {
-        padding: 1,
-        fontSize: theme.typography.size.sm,
+        padding: theme.spacing(0.5, 1.5),
+        fontSize: theme.typography.size.md,
         height: theme.components.height.sm,
       };
 
     case 'lg':
       return {
-        padding: 3,
+        padding: theme.spacing(1.5,3),
         fontSize: theme.typography.size.lg,
         height: theme.components.height.lg,
       };
     case 'md':
     default:
       return {
-        padding: 2,
+        padding: theme.spacing(1,2),
         fontSize: theme.typography.size.md,
         height: theme.components.height.md,
       };

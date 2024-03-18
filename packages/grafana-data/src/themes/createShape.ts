@@ -11,6 +11,7 @@ interface Radii {
   default: string;
   pill: string;
   circle: string;
+  button: string;
 }
 
 /** @internal */
@@ -25,6 +26,7 @@ export function createShape(options: ThemeShapeInput): ThemeShape {
     default: '2px',
     pill: '9999px',
     circle: '100%',
+    button: '24px'
   };
 
   /**

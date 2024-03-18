@@ -223,7 +223,7 @@ export const SearchResultsTable = React.memo(
 SearchResultsTable.displayName = 'SearchResultsTable';
 
 const getStyles = (theme: GrafanaTheme2) => {
-  const rowHoverBg = theme.colors.emphasize(theme.colors.background.primary, 0.03);
+  const rowHoverBg = theme.colors.jdsColors.tableHeaderRowBgHover;
 
   return {
     noData: css`
@@ -240,10 +240,11 @@ const getStyles = (theme: GrafanaTheme2) => {
       padding: ${theme.spacing(1)};
     `,
     headerRow: css`
-      background-color: ${theme.colors.background.secondary};
+      background-color: ${theme.colors.jdsColors.tableHeaderBackgroundColor};
       display: flex;
       gap: ${theme.spacing(1)};
       height: ${ROW_HEIGHT}px;
+      color:${theme.colors.jdsColors.tableHeaderTextColor}
     `,
     selectedRow: css`
       background-color: ${rowHoverBg};

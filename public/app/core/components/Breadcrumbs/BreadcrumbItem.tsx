@@ -60,17 +60,17 @@ const getStyles = (theme: GrafanaTheme2) => {
       overflow: 'hidden',
       padding: theme.spacing(0, 0.5),
       whiteSpace: 'nowrap',
-      color: theme.colors.text.secondary,
+      color:  theme.colors.jdsColors.breadcrumText,
     }),
     breadcrumbLink: css({
-      color: theme.colors.text.primary,
+      color:  theme.colors.jdsColors.breadcrumText,
       '&:hover': {
-        textDecoration: 'underline',
+        textDecoration: 'none',
       },
     }),
     breadcrumbWrapper: css({
       alignItems: 'center',
-      color: theme.colors.text.primary,
+      color:  theme.colors.jdsColors.breadcrumText,
       display: 'flex',
       flex: 1,
       minWidth: 0,

@@ -345,7 +345,7 @@ const getContentStyle = (
 };
 
 const getStyles = (theme: GrafanaTheme2) => {
-  const { background, borderColor, padding } = theme.components.panel;
+  const { background, borderColor, padding, textPrimary, borderRadius } = theme.components.panel;
 
   return {
     container: css({
@@ -353,10 +353,12 @@ const getStyles = (theme: GrafanaTheme2) => {
       backgroundColor: background,
       border: `1px solid ${borderColor}`,
       position: 'relative',
-      borderRadius: theme.shape.radius.default,
+      borderRadius: borderRadius ,
       height: '100%',
       display: 'flex',
       flexDirection: 'column',
+      color: textPrimary,
+      padding: '16px',
 
       '> *': {
         zIndex: 0,
@@ -455,9 +457,12 @@ const getStyles = (theme: GrafanaTheme2) => {
     menuItem: css({
       label: 'panel-menu',
       border: 'none',
-      background: theme.colors.secondary.main,
-      '&:hover': {
-        background: theme.colors.secondary.shade,
+      background: 'transparent',
+      color: '#000',
+      '&:hover, &:active': {
+        background: 'transparent',
+        boxShadow: 'none',
+        color: '#000',
       },
     }),
     errorContainerFloating: css({

@@ -170,7 +170,7 @@ export const MenuItem = React.memo(
           <div className={cx(styles.rightWrapper, { [styles.withShortcut]: hasShortcut })}>
             {hasShortcut && (
               <div className={styles.shortcut}>
-                <Icon name="keyboard" title="keyboard shortcut" />
+                <Icon name="keyboard" title="keyboard shortcut" className={styles.moreicon} />
                 {shortcut}
               </div>
             )}
@@ -208,7 +208,7 @@ const getStyles = (theme: GrafanaTheme2) => {
       background: 'none',
       cursor: 'pointer',
       whiteSpace: 'nowrap',
-      color: theme.colors.text.primary,
+      color: theme.colors.jdsColors.moreMenuTextColor,
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'stretch',
@@ -220,15 +220,21 @@ const getStyles = (theme: GrafanaTheme2) => {
       position: 'relative',
 
       '&:hover, &:focus, &:focus-visible': {
-        background: theme.colors.action.hover,
-        color: theme.colors.text.primary,
+        background: theme.colors.jdsColors.moreMenuItemHoverBg,
+        color: theme.colors.jdsColors.moreMenuItemHoverText,
         textDecoration: 'none',
+        svg:{
+          color: theme.colors.jdsColors.moreMenuItemHoverText,
+        },
+        shortcut:{
+          color: theme.colors.jdsColors.moreMenuItemHoverText,  
+        }
       },
 
       '&:focus-visible': getFocusStyles(theme),
     }),
     active: css({
-      background: theme.colors.action.hover,
+      background: theme.colors.jdsColors.menu2,
     }),
     destructive: css({
       color: theme.colors.error.text,
@@ -257,7 +263,7 @@ const getStyles = (theme: GrafanaTheme2) => {
     }),
     icon: css({
       opacity: 0.7,
-      color: theme.colors.text.secondary,
+      color: theme.colors.jdsColors.moreMenuTextColor,
     }),
     rightWrapper: css({
       display: 'flex',
@@ -272,8 +278,11 @@ const getStyles = (theme: GrafanaTheme2) => {
       alignItems: 'center',
       gap: theme.spacing(1),
       marginLeft: theme.spacing(2),
-      color: theme.colors.text.secondary,
+      color: theme.colors.jdsColors.moreMenuTextColor,
       opacity: 0.7,
+    }),
+    moreicon: css({
+      color: theme.colors.jdsColors.moreMenuTextColor,
     }),
     description: css({
       ...theme.typography.bodySmall,

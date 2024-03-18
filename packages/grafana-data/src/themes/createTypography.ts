@@ -13,6 +13,7 @@ export interface ThemeTypography extends ThemeTypographyVariantTypes {
   fontWeightRegular: number;
   fontWeightMedium: number;
   fontWeightBold: number;
+  fontWeightBlack: number;
 
   // The font-size on the html element.
   htmlFontSize?: number;
@@ -48,12 +49,13 @@ export interface ThemeTypographyInput {
   fontWeightRegular?: number;
   fontWeightMedium?: number;
   fontWeightBold?: number;
+  fontWeightBlack?: number;
   // hat's the font-size on the html element.
   // 16px is the default font-size used by browsers.
   htmlFontSize?: number;
 }
 
-const defaultFontFamily = '"Inter", "Helvetica", "Arial", sans-serif';
+const defaultFontFamily = '"Jio","Inter", "Helvetica", "Arial", sans-serif';
 const defaultFontFamilyMonospace = "'Roboto Mono', monospace";
 
 export function createTypography(colors: ThemeColors, typographyInput: ThemeTypographyInput = {}): ThemeTypography {
@@ -65,7 +67,8 @@ export function createTypography(colors: ThemeColors, typographyInput: ThemeTypo
     fontWeightLight = 300,
     fontWeightRegular = 400,
     fontWeightMedium = 500,
-    fontWeightBold = 500,
+    fontWeightBold = 700,
+    fontWeightBlack = 900,
     // Tell Grafana-UI what's the font-size on the html element.
     // 16px is the default font-size used by browsers.
     htmlFontSize = 14,
@@ -106,14 +109,14 @@ export function createTypography(colors: ThemeColors, typographyInput: ThemeTypo
 
   // All our fonts/line heights should be integer multiples of 2 to prevent issues with alignment
   const variants = {
-    h1: buildVariant(fontWeightRegular, 28, 32, -0.25),
-    h2: buildVariant(fontWeightRegular, 24, 28, 0),
-    h3: buildVariant(fontWeightRegular, 22, 24, 0),
-    h4: buildVariant(fontWeightRegular, 18, 22, 0.25),
-    h5: buildVariant(fontWeightRegular, 16, 22, 0),
-    h6: buildVariant(fontWeightMedium, 14, 22, 0.15),
-    body: buildVariant(fontWeightRegular, fontSize, 22, 0.15),
-    bodySmall: buildVariant(fontWeightRegular, 12, 18, 0.15),
+    h1: buildVariant(fontWeightBlack, 32, 32, -0.3),
+    h2: buildVariant(fontWeightBlack, 24, 28, -0.3),
+    h3: buildVariant(fontWeightBold, 22, 24, 0),
+    h4: buildVariant(fontWeightBold, 18, 22, 0.25),
+    h5: buildVariant(fontWeightBold, 16, 22, 0),
+    h6: buildVariant(fontWeightBold, 14, 22, 0.15),
+    body: buildVariant(fontWeightMedium, fontSize, 22, 0.15),
+    bodySmall: buildVariant( fontWeightMedium, 12, 18, 0.15),
     code: { ...buildVariant(fontWeightRegular, 14, 16, 0.15), fontFamily: fontFamilyMonospace },
   };
 
@@ -121,7 +124,7 @@ export function createTypography(colors: ThemeColors, typographyInput: ThemeTypo
     base: '14px',
     xs: '10px',
     sm: '12px',
-    md: '14px',
+    md: '16px',
     lg: '18px',
   };
 
@@ -135,6 +138,7 @@ export function createTypography(colors: ThemeColors, typographyInput: ThemeTypo
     fontWeightRegular,
     fontWeightMedium,
     fontWeightBold,
+    fontWeightBlack,
     size,
     ...variants,
   };

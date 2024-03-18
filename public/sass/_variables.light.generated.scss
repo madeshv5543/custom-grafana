@@ -108,8 +108,8 @@ $text-blue: #1F62E0;
 $text-shadow-faint: none;
 
 // gradients
-$brand-gradient-horizontal: linear-gradient(90deg, #FF8833 0%, #F53E4C 100%);
-$brand-gradient-vertical: linear-gradient(0.01deg, #F53E4C -31.2%, #FF8833 113.07%);
+$brand-gradient-horizontal: linear-gradient(270deg, #0078AD 0%, #0078AD 100%);
+$brand-gradient-vertical: linear-gradient(0.01deg, #0078AD 0.01%, #0078AD 99.99%);
 
 // Links
 // -------------------------
@@ -210,7 +210,7 @@ $btn-active-box-shadow: 0px 0px 4px rgba(234, 161, 51, 0.6);
 $input-bg: #FFFFFF;
 $input-bg-disabled: rgba(36, 41, 46, 0.04);
 
-$input-color: rgba(36, 41, 46, 1);
+$input-color: #FFFFFF;
 $input-border-color: rgba(36, 41, 46, 0.30);
 $input-box-shadow: none;
 $input-border-focus: #5794f2;
@@ -283,9 +283,9 @@ $alert-warning-bg: #FF9900;
 $alert-info-bg: #FF9900;
 
 // Tooltips and popovers
-$tooltipBackground: #F4F5F5;
-$tooltipColor: rgba(36, 41, 46, 1);
-$tooltipArrowColor: #F4F5F5;
+$tooltipBackground: #0C5273;
+$tooltipColor: #FFFFFF;
+$tooltipArrowColor: #0C5273;
 $tooltipBackgroundError: #E0226E;
 $tooltipShadow: 0px 4px 8px rgba(24, 26, 27, 0.2);
 
