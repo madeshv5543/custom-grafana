@@ -1,6 +1,7 @@
 module github.com/grafana/grafana
 
 go 1.21.0
+toolchain go1.22.5
 
 // Override docker/docker to avoid:
 // go: github.com/drone-runners/drone-runner-docker@v1.8.2 requires
@@ -265,7 +266,7 @@ require (
 	github.com/microsoft/go-mssqldb v1.6.1-0.20240214161942-b65008136246 // @grafana/grafana-bi-squad
 	github.com/redis/go-redis/v9 v9.0.2 // @grafana/alerting-squad-backend
 	go.opentelemetry.io/contrib/samplers/jaegerremote v0.16.0 // @grafana/backend-platform
-	golang.org/x/mod v0.14.0 // @grafana/backend-platform
+	golang.org/x/mod v0.21.0 // @grafana/backend-platform
 	k8s.io/utils v0.0.0-20230726121419-3b25d923346b // @grafana/partner-datasources
 )
 
