@@ -262,7 +262,7 @@ require (
 	github.com/grafana/kindsys v0.0.0-20230508162304-452481b63482 //  @grafana/grafana-as-code
 	github.com/grafana/tempo v1.5.1-0.20230524121406-1dc1bfe7085b // @grafana/observability-traces-and-profiling
 	github.com/grafana/thema v0.0.0-20230712153715-375c1b45f3ed // @grafana/grafana-as-code
-	github.com/microsoft/go-mssqldb v1.6.1-0.20240214161942-b65008136246 // @grafana/grafana-bi-squad
+	github.com/microsoft/go-mssqldb v1.7.2 // @grafana/grafana-bi-squad
 	github.com/redis/go-redis/v9 v9.0.2 // @grafana/alerting-squad-backend
 	go.opentelemetry.io/contrib/samplers/jaegerremote v0.16.0 // @grafana/backend-platform
 	golang.org/x/mod v0.14.0 // @grafana/backend-platform
